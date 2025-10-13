@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLABORATION - データサイエンスによる個別最適化</title>
+    <meta name="description" content="データとデジタル空間の知見を通じて、生活者一人ひとりの生活を根源から最適化し、その可能性を最大化するためのパートナーシップと協業の機会についてご案内します。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0A2E5C; /* 深い知性を感じさせる紺青 */
+            --color-secondary: #4A90E2; /* 先進性と信頼性を表す青 */
+            --color-accent: #F5A623; /* 未来への情熱と創造性を示すオレンジ */
+            --color-background: #F8F9FA; /* クリーンで科学的な印象のライトグレー */
+            --color-text-primary: #212529; /* 可読性の高いダークグレー */
+            --color-text-secondary: #495057; /* 補助的なテキスト用のグレー */
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-background { background-color: var(--color-background); }
+        .text-primary { color: var(--color-primary); }
+        .text-secondary { color: var(--color-secondary); }
+        .text-accent { color: var(--color-accent); }
+        .text-text-primary { color: var(--color-text-primary); }
+        .text-text-secondary { color: var(--color-text-secondary); }
+        .border-primary { border-color: var(--color-primary); }
+        .border-secondary { border-color: var(--color-secondary); }
+        .border-accent { border-color: var(--color-accent); }
+        
+        /* ハンバーガーメニュー用の簡単なアニメーション */
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger-open .line-1 {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger-open .line-2 {
+            opacity: 0;
+        }
+        .hamburger-open .line-3 {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダー -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span class="text-xl font-bold text-primary">QuantumLeap Inc.</span>
+                </a>
+                
+                <!-- デスクトップナビゲーション -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="vision.html" class="text-gray-600 hover:text-secondary transition-colors duration-300">VISION</a>
+                    <a href="solutions.html" class="text-gray-600 hover:text-secondary transition-colors duration-300">SOLUTIONS</a>
+                    <a href="insights.html" class="text-gray-600 hover:text-secondary transition-colors duration-300">INSIGHTS</a>
+                    <a href="collaboration.html" class="text-secondary font-bold border-b-2 border-secondary">COLLABORATION</a>
+                    <a href="contact.html" class="bg-secondary text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">CONTACT</a>
+                </nav>
+
+                <!-- モバイルナビゲーションボタン -->
+                <div class="md:hidden">
+                    <button id="hamburger-button" class="text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <g>
+                                <path class="hamburger-line line-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                                <path class="hamburger-line line-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                                <path class="hamburger-line line-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- モバイルナビゲーションメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+            <nav class="flex flex-col items-center space-y-4 py-8">
+                <a href="vision.html" class="text-lg text-gray-700 hover:text-secondary transition-colors duration-300">VISION</a>
+                <a href="solutions.html" class="text-lg text-gray-700 hover:text-secondary transition-colors duration-300">SOLUTIONS</a>
+                <a href="insights.html" class="text-lg text-gray-700 hover:text-secondary transition-colors duration-300">INSIGHTS</a>
+                <a href="collaboration.html" class="text-lg text-secondary font-bold">COLLABORATION</a>
+                <a href="contact.html" class="mt-4 bg-secondary text-white font-bold py-2 px-8 rounded-full hover:bg-opacity-90 transition-transform duration-300 transform hover:scale-105">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary leading-tight">
+                    共に未来を創造する
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
+                    データサイエンスとデジタル知見を融合させ、新たな価値を共創するパートナーシップを求めています。貴社のビジネスアセットと私たちの専門技術で、生活者の可能性を最大化する次世代のソリューションを創造しませんか。
+                </p>
+            </div>
+        </section>
+
+        <!-- 私たちと協業する価値 -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                        私たちのパートナーシップがもたらす独自の価値
+                    </h2>
+                    <p class="mt-4 text-text-secondary max-w-2xl mx-auto">
+                        私たちの強みは、単なる技術提供に留まりません。科学的アプローチとビジネスインパクトを両立させ、持続可能な成長を共に実現します。
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-center mb-4">
+                           <svg class="h-12 w-12 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h12M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-12a2.25 2.25 0 0 1-2.25-2.25V3.75m16.5 0v-1.5m-16.5 1.5v-1.5" />
+                           </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">データサイエンスの専門性</h3>
+                        <p class="text-text-secondary">
+                            Webとリアルの統合データ分析に基づき、これまで見えなかった顧客インサイトを可視化。貴社のビジネスに科学的根拠と予測可能性をもたらします。
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-center mb-4">
+                            <svg class="h-12 w-12 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 11.667 0l3.181-3.183m-4.991-2.696v4.992h-4.992v-4.992z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">実証的PDCAサイクル</h3>
+                        <p class="text-text-secondary">
+                            仮説検証を高速で回し、リスクを最小化しながらイノベーションを加速。アイデアで終わらせず、市場で実証された価値を創出します。
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex justify-center mb-4">
+                            <svg class="h-12 w-12 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">生活者中心の価値創造</h3>
+                        <p class="text-text-secondary">
+                            私たちのパーパスは生活者の可能性を最大化すること。貴社のサービスを通じ、真にパーソナライズされた豊かな体験を共に実現します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- パートナーシップの形態 -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">多様な連携の可能性</h2>
+                    <p class="mt-4 text-text-secondary max-w-2xl mx-auto">
+                        貴社のビジネスフェーズや目的に応じて、柔軟なパートナーシップを構築します。
+                    </p>
+                </div>
+                <div class="space-y-8">
+                    <!-- 事業開発パートナーシップ -->
+                    <div class="md:flex items-center bg-background rounded-lg p-8 shadow-sm">
+                        <div class="md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold text-primary">事業開発パートナーシップ</h3>
+                            <p class="text-secondary font-semibold">Business Development</p>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <p class="text-text-secondary mb-4">
+                                共同での市場調査、データ分析に基づく新サービス企画・開発、実証実験（PoC）を実施。貴社の業界知見と私たちのデータサイエンス技術を掛け合わせ、新たな市場を切り拓きます。
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">共同R&D</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">新規事業創出</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">DX推進支援</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- テクノロジーパートナーシップ -->
+                    <div class="md:flex items-center bg-background rounded-lg p-8 shadow-sm">
+                        <div class="md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold text-primary">テクノロジーパートナーシップ</h3>
+                            <p class="text-secondary font-semibold">Technology Partnership</p>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <p class="text-text-secondary mb-4">
+                                互いの技術やAPIを連携させ、より高度なソリューションを共同開発。私たちのデータ分析基盤と貴社の技術を統合し、顧客に提供する価値を飛躍的に高めます。
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">API連携</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">技術統合</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">ソリューション強化</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 販売・アライアンスパートナーシップ -->
+                    <div class="md:flex items-center bg-background rounded-lg p-8 shadow-sm">
+                        <div class="md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold text-primary">販売・アライアンスパートナーシップ</h3>
+                            <p class="text-secondary font-semibold">Sales & Alliance</p>
+                        </div>
+                        <div class="md:w-2/3 md:pl-8">
+                            <p class="text-text-secondary mb-4">
+                                相互の顧客基盤へのクロスセル、共同でのマーケティング・セミナー開催。パートナープログラムを通じて、貴社のビジネス拡大を強力に支援します。
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">販売代理</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">共同マーケティング</span>
+                                <span class="bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1 rounded-full">顧客基盤拡大</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 協業プロセス -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">価値共創へのステップ</h2>
+                    <p class="mt-4 text-text-secondary max-w-2xl mx-auto">
+                        透明性の高いプロセスを通じて、着実に成果を生み出します。
+                    </p>
+                </div>
+                <div class="relative">
+                    <!-- 縦線 -->
+                    <div class="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-secondary/30" aria-hidden="true"></div>
+                    
+                    <div class="space-y-12 md:space-y-0">
+                        <!-- Step 1 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold md:ml-auto">1</div>
+                                <h3 class="text-xl font-bold text-primary mt-4">お問い合わせ & 対話</h3>
+                            </div>
+                            <div class="md:pl-8 md:border-l-4 border-secondary/30">
+                                <p class="text-text-secondary">まずは貴社の課題やビジョンをお聞かせください。私たちが貢献できる可能性を探るための最初の対話から始めます。</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="md:col-start-2 md:text-left md:pl-8 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                                <h3 class="text-xl font-bold text-primary mt-4">ディスカッション & 目標設定</h3>
+                            </div>
+                            <div class="md:col-start-1 md:row-start-1 md:text-right md:pr-8 md:border-r-4 border-secondary/30">
+                                <p class="text-text-secondary">機密保持契約を締結後、相互の知見を安全に共有。協業の具体的なテーマや成功指標（KPI）を共に定義します。</p>
+                            </div>
+                        </div>
+                         <!-- Step 3 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold md:ml-auto">3</div>
+                                <h3 class="text-xl font-bold text-primary mt-4">共同での仮説構築</h3>
+                            </div>
+                            <div class="md:pl-8 md:border-l-4 border-secondary/30">
+                                <p class="text-text-secondary">データに基づき、解決すべき課題とアプローチに関する共同の仮説を構築。実証可能な計画を策定します。</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="md:col-start-2 md:text-left md:pl-8 mb-4 md:mb-0">
+                                <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                                <h3 class="text-xl font-bold text-primary mt-4">プロトタイピング / PoC</h3>
+                            </div>
+                            <div class="md:col-start-1 md:row-start-1 md:text-right md:pr-8 md:border-r-4 border-secondary/30">
+                                <p class="text-text-secondary">小規模な実証実験を通じて、仮説の有効性を迅速に検証。リスクを管理しながらプロジェクトを推進します。</p>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                                <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold md:ml-auto">5</div>
+                                <h3 class="text-xl font-bold text-primary mt-4">本格展開 & 継続的改善</h3>
+                            </div>
+                            <div class="md:pl-8 md:border-l-4 border-accent/30">
+                                <p class="text-text-secondary">検証されたモデルを本格的に展開し、実証的なPDCAサイクルで継続的に価値を最大化していきます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 採用情報セクション -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">
+                    私たちのチームに参加しませんか？
+                </h2>
+                <p class="mt-4 text-lg text-text-secondary max-w-3xl mx-auto">
+                    パートナーシップだけでなく、私たちはデータサイエンスの力で社会を変革する情熱を持った仲間を求めています。データサイエンティスト、エンジニア、UXデザイナー、ビジネスデベロッパーとして、個別最適化の未来を共に創りませんか？
+                </p>
+                <div class="mt-8">
+                    <a href="careers.html" class="inline-block bg-accent text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        採用情報を見る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTAセクション -->
+        <section class="bg-secondary">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-bold text-white">さあ、未来の協業について話しましょう</h2>
+                <p class="mt-4 text-white/90 max-w-2xl mx-auto">
+                    貴社のビジョンと私たちのデータサイエンスが交差する点に、まだ見ぬ可能性があります。まずはお気軽にお問い合わせください。
+                </p>
+                <div class="mt-8">
+                    <a href="contact.html" class="inline-block bg-white text-secondary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105">
+                        お問い合わせはこちら
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- フッター -->
+    <footer class="bg-primary text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company Info -->
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span class="text-xl font-bold text-white">QuantumLeap Inc.</span>
+                    </a>
+                    <p class="mt-4 text-white/80 text-sm">
+                        データとデジタル空間の知見を通じて、生活者一人ひとりの生活を根源から最適化し、その可能性を最大化します。
+                    </p>
+                </div>
+
+                <!-- Column 2: Site Map 1 -->
+                <div>
+                    <h3 class="font-bold tracking-wider uppercase">Menu</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors duration-300">ホーム</a></li>
+                        <li><a href="vision.html" class="text-white/80 hover:text-white transition-colors duration-300">VISION</a></li>
+                        <li><a href="solutions.html" class="text-white/80 hover:text-white transition-colors duration-300">SOLUTIONS</a></li>
+                        <li><a href="insights.html" class="text-white/80 hover:text-white transition-colors duration-300">INSIGHTS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Site Map 2 -->
+                 <div>
+                    <h3 class="font-bold tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="collaboration.html" class="text-white/80 hover:text-white transition-colors duration-300">COLLABORATION</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors duration-300">CONTACT</a></li>
+                        <li><a href="careers.html" class="text-white/80 hover:text-white transition-colors duration-300">採用情報</a></li>
+                         <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-300">ニュースリリース</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal & Social -->
+                <div>
+                    <h3 class="font-bold tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-300">プライバシーポリシー</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors duration-300">利用規約</a></li>
+                    </ul>
+                    <div class="mt-6">
+                        <h3 class="font-bold tracking-wider uppercase">Follow Us</h3>
+                        <div class="flex mt-2 space-x-4">
+                            <a href="#" class="text-white/80 hover:text-white transition-colors duration-300">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="#" class="text-white/80 hover:text-white transition-colors duration-300">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-white/20 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2024 QuantumLeap Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerButton.querySelector('svg').classList.toggle('hamburger-open');
+        });
+    </script>
+</body>
+</html>

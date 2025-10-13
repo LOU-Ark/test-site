@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSIGHTS | データ駆動型個別最適化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0D1B34; /* 深い紺色 */
+            --color-secondary: #16294D; /* やや明るい紺色 */
+            --color-accent: #00AEEF; /* 鮮やかなシアン */
+            --color-text-primary: #E0E0E0; /* 明るいグレー */
+            --color-text-secondary: #A0AEC0; /* 中間のグレー */
+            --color-background: #081224; /* 背景色 */
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #FFFFFF, var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(0, 174, 239, 0.3), 0 0 5px rgba(0, 174, 239, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-[var(--color-primary)]/80 backdrop-blur-sm sticky top-0 z-50 border-b border-white/10" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-[var(--color-accent)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 7L12 12M22 7L12 12M12 22V12M17 4.5L7 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="text-xl font-bold text-white">Optima Analytics</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-medium text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">ホーム</a>
+                <a href="vision.html" class="text-sm font-medium text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">VISION</a>
+                <a href="solutions.html" class="text-sm font-medium text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">SOLUTIONS</a>
+                <a href="insights.html" class="text-sm font-medium text-white border-b-2 border-[var(--color-accent)] pb-1">INSIGHTS</a>
+                <a href="collaboration.html" class="text-sm font-medium text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">COLLABORATION</a>
+                <a href="contact.html" class="bg-[var(--color-accent)] text-white text-sm font-bold py-2 px-4 rounded-full hover:bg-opacity-80 transition-all duration-300">お問い合わせ</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[var(--color-primary)]">
+            <a href="index.html" class="block py-2 px-6 text-sm text-[var(--color-text-secondary)] hover:bg-[var(--color-secondary)]">ホーム</a>
+            <a href="vision.html" class="block py-2 px-6 text-sm text-[var(--color-text-secondary)] hover:bg-[var(--color-secondary)]">VISION</a>
+            <a href="solutions.html" class="block py-2 px-6 text-sm text-[var(--color-text-secondary)] hover:bg-[var(--color-secondary)]">SOLUTIONS</a>
+            <a href="insights.html" class="block py-2 px-6 text-sm text-white bg-[var(--color-secondary)]">INSIGHTS</a>
+            <a href="collaboration.html" class="block py-2 px-6 text-sm text-[var(--color-text-secondary)] hover:bg-[var(--color-secondary)]">COLLABORATION</a>
+            <a href="contact.html" class="block py-4 px-6">
+                <span class="bg-[var(--color-accent)] text-white text-sm font-bold py-2 px-4 rounded-full">お問い合わせ</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-[var(--color-primary)] relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-white/[0.05]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--color-background)]"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+                    <span class="gradient-text">知性の最前線</span>
+                </h1>
+                <p class="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+                    データサイエンスが拓く、個別最適化の未来。最新のコラム、深層研究レポート、そして専門家が登壇するセミナーを通じて、私たちの科学的知見と未来への洞察を共有します。
+                </p>
+            </div>
+        </section>
+
+        <!-- Insights Grid Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                
+                <!-- Featured Columns -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-2 text-center">最新コラム & 分析</h2>
+                    <p class="text-center text-[var(--color-text-secondary)] mb-12">データサイエンスの現場から、実用的な知見と未来予測をお届けします。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-[var(--color-secondary)] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 glow-border border border-white/10">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-semibold bg-[var(--color-accent)]/20 text-[var(--color-accent)] py-1 px-3 rounded-full">AI / 因果推論</span>
+                                    <span class="text-xs text-[var(--color-text-secondary)]">2023.10.26</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">因果推論が解き明かす、真のパーソナライゼーションROI</h3>
+                                <p class="text-[var(--color-text-secondary)] text-sm mb-4 leading-relaxed">
+                                    A/Bテストの限界を超え、施策が「なぜ」効果を上げたのかを科学的に証明する。傾向スコアマッチングや差分の差分法を用いた分析アプローチを解説。
+                                </p>
+                                <a href="#" class="font-semibold text-[var(--color-accent)] hover:underline">続きを読む &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-[var(--color-secondary)] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 glow-border border border-white/10">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-semibold bg-[var(--color-accent)]/20 text-[var(--color-accent)] py-1 px-3 rounded-full">UX / 行動経済学</span>
+                                     <span class="text-xs text-[var(--color-text-secondary)]">2023.10.15</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">ナッジ理論とデータ分析：ユーザーを「良い選択」へ導くUX設計</h3>
+                                <p class="text-[var(--color-text-secondary)] text-sm mb-4 leading-relaxed">
+                                    人間の認知バイアスを理解し、データに基づいたナッジをUXに組み込むことで、コンバージョンと顧客満足度を同時に向上させる設計論。
+                                </p>
+                                <a href="#" class="font-semibold text-[var(--color-accent)] hover:underline">続きを読む &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-[var(--color-secondary)] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 glow-border border border-white/10">
+                           <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-semibold bg-[var(--color-accent)]/20 text-[var(--color-accent)] py-1 px-3 rounded-full">データ戦略</span>
+                                     <span class="text-xs text-[var(--color-text-secondary)]">2023.09.28</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">プライバシー保護とデータ活用の両立：差分プライバシー入門</h3>
+                                <p class="text-[var(--color-text-secondary)] text-sm mb-4 leading-relaxed">
+                                    個人のプライバシーを数学的に保証しながら、データセット全体の統計的価値を維持する「差分プライバシー」。その基本概念とビジネス応用例。
+                                </p>
+                                <a href="#" class="font-semibold text-[var(--color-accent)] hover:underline">続きを読む &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Reports -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-2 text-center">深層研究レポート</h2>
+                    <p class="text-center text-[var(--color-text-secondary)] mb-12">私たちの研究開発チームによる、特定領域に特化した詳細な分析レポートです。</p>
+                    <div class="space-y-8">
+                        <!-- Report 1 -->
+                        <div class="bg-[var(--color-secondary)] rounded-lg p-6 flex flex-col md:flex-row items-center gap-6 border border-white/10">
+                            <div class="flex-shrink-0 w-32 h-40 bg-[var(--color-primary)] flex items-center justify-center rounded">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold mb-2">次世代Eコマースにおける強化学習を用いた動的プライシング戦略</h3>
+                                <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+                                    市場の需要、競合価格、ユーザー行動データをリアルタイムで学習し、利益を最大化する動的価格設定モデル。多腕バンディット問題から深層強化学習（DQN）への応用までを詳述。
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <a href="#" class="bg-[var(--color-accent)] text-white font-bold py-3 px-6 rounded-full w-full md:w-auto text-center inline-block hover:bg-opacity-80 transition-all duration-300">
+                                    レポートをDL
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Report 2 -->
+                        <div class="bg-[var(--color-secondary)] rounded-lg p-6 flex flex-col md:flex-row items-center gap-6 border border-white/10">
+                            <div class="flex-shrink-0 w-32 h-40 bg-[var(--color-primary)] flex items-center justify-center rounded">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h3 class="text-xl font-bold mb-2">LLMを活用した顧客フィードバックの定性分析とインサイト自動抽出</h3>
+                                <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+                                    レビュー、アンケート、サポート問合せなどの膨大なテキストデータから、潜在ニーズや製品改善点を自動で要約・分類する独自モデルの構築と評価。
+                                </p>
+                            </div>
+                             <div class="flex-shrink-0">
+                                <a href="#" class="bg-[var(--color-accent)] text-white font-bold py-3 px-6 rounded-full w-full md:w-auto text-center inline-block hover:bg-opacity-80 transition-all duration-300">
+                                    レポートをDL
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seminars & Webinars -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-2 text-center">セミナー & ウェビナー</h2>
+                    <p class="text-center text-[var(--color-text-secondary)] mb-12">業界の専門家や弊社のデータサイエンティストが登壇する、実践的な学びの場を提供します。</p>
+                    <div class="max-w-4xl mx-auto divide-y divide-white/10">
+                        <!-- Seminar 1 -->
+                        <div class="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div>
+                                <p class="text-sm text-[var(--color-accent)] font-semibold mb-1">2023年11月15日 (水) 14:00 - 15:30 [オンライン]</p>
+                                <h3 class="text-lg font-bold">実践：データドリブンなUX改善サイクルの構築法</h3>
+                                <p class="text-sm text-[var(--color-text-secondary)] mt-1">Google Analytics 4のデータとヒートマップ分析を組み合わせ、改善仮説を立案・検証するプロセスを実例で解説。</p>
+                            </div>
+                            <a href="#" class="bg-transparent border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold py-2 px-6 rounded-full w-full md:w-auto text-center hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300 mt-4 md:mt-0">
+                                詳細・申込
+                            </a>
+                        </div>
+                        <!-- Seminar 2 -->
+                         <div class="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div>
+                                <p class="text-sm text-[var(--color-text-secondary)] font-semibold mb-1"><span class="bg-red-500/80 text-white text-xs py-1 px-2 rounded-md mr-2">受付終了</span>2023年10月20日 (金) 16:00 - 17:00 [オンライン]</p>
+                                <h3 class="text-lg font-bold text-[var(--color-text-secondary)]">顧客LTVを最大化するマーケティングミックスモデリング（MMM）</h3>
+                                <p class="text-sm text-[var(--color-text-secondary)] mt-1">各マーケティングチャネルの貢献度を統計的に可視化し、最適な予算配分を導き出す手法について。</p>
+                            </div>
+                            <button disabled class="bg-gray-700 text-gray-400 font-bold py-2 px-6 rounded-full w-full md:w-auto text-center cursor-not-allowed mt-4 md:mt-0">
+                                受付終了
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color-primary)] border-t border-white/10">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">COMPANY</h3>
+                    <ul class="space-y-3">
+                        <li><a href="vision.html" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">VISION</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">会社概要</a></li>
+                        <li><a href="collaboration.html" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">協業・採用</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">ニュースリリース</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: Solutions -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">SOLUTIONS</h3>
+                    <ul class="space-y-3">
+                        <li><a href="solutions.html" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">サービス一覧</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">導入事例</a></li>
+                        <li><a href="solutions.html#pdca" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">PDCAメソッド</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Resources -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RESOURCES</h3>
+                    <ul class="space-y-3">
+                        <li><a href="insights.html" class="text-sm text-white hover:text-white transition-colors duration-300">INSIGHTS</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">コラム</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">研究レポート</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">セミナー</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Support -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">SUPPORT</h3>
+                    <ul class="space-y-3">
+                        <li><a href="contact.html" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">お問い合わせ</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">プライバシーポリシー</a></li>
+                        <li><a href="#" class="text-sm text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">サイトマップ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-[var(--color-text-secondary)]">&copy; 2023 Optima Analytics Inc. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                    </a>
+                    <a href="#" class="text-[var(--color-text-secondary)] hover:text-white transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Downscroll
+                header.style.top = '-100px';
+            } else {
+                // Upscroll
+                header.style.top = '0';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+    </script>
+</body>
+</html>

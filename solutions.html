@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUTIONS | DataOptimize Inc.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-bg: #0d1117; /* GitHub Dark Dimmed Background */
+            --color-secondary-bg: #161b22; /* GitHub Dark Dimmed Borders/Panels */
+            --color-text-primary: #c9d1d9; /* GitHub Dark Dimmed Primary Text */
+            --color-text-secondary: #8b949e; /* GitHub Dark Dimmed Secondary Text */
+            --color-accent: #58a6ff; /* GitHub Dark Dimmed Blue Accent */
+            --color-accent-hover: #1f6feb; /* GitHub Dark Dimmed Blue Accent Hover */
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--color-primary-bg);
+            color: var(--color-text-primary);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #67e8f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .glass-effect {
+            background: rgba(22, 27, 34, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 148, 158, 0.2);
+        }
+        .active-nav {
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold tracking-wider">
+                    DataOptimize <span class="gradient-text">Inc.</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300">ホーム</a>
+                    <a href="vision.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300">VISION</a>
+                    <a href="solutions.html" class="text-sm font-medium text-cyan-400 border-b-2 border-cyan-400 pb-1">SOLUTIONS</a>
+                    <a href="insights.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300">INSIGHTS</a>
+                    <a href="collaboration.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors duration-300">COLLABORATION</a>
+                    <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 text-sm">お問い合わせ</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">ホーム</a>
+                <a href="vision.html" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">VISION</a>
+                <a href="solutions.html" class="block text-cyan-400 bg-gray-700 px-3 py-2 rounded-md text-base font-medium">SOLUTIONS</a>
+                <a href="insights.html" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">INSIGHTS</a>
+                <a href="collaboration.html" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">COLLABORATION</a>
+                <a href="contact.html" class="block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 text-center mt-4">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative py-24 md:py-32 bg-gray-900 overflow-hidden">
+            <div class="absolute inset-0 bg-grid-gray-700/[0.2] [mask-image:linear-gradient(to_bottom,white_10%,transparent_100%)]"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
+                    <span class="gradient-text">実行力と実証性</span>で導く、<br class="hidden sm:block">真の個別最適化
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400">
+                    抽象的な理想論から、具体的なビジネス成果へ。私たちはデータサイエンスを核とする実証的PDCAサイクルと、数々の成功事例に基づき、貴社のビジネス課題を解決し、生活者一人ひとりの体験価値を最大化します。
+                </p>
+            </div>
+        </section>
+
+        <!-- Data Science PDCA Cycle Section -->
+        <section id="pdca-method" class="py-20 sm:py-28 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-base font-semibold text-cyan-400 tracking-wider uppercase">Our Method</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                        データサイエンスが駆動する、実証的PDCAサイクル
+                    </p>
+                    <p class="mt-6 text-lg text-gray-400">
+                        一般的なPDCAサイクルが直面する「経験則への依存」や「効果の不透明性」という壁。私たちは各フェーズにデータサイエンスを組み込むことで、この壁を乗り越え、客観的かつ再現性の高い個別最適化を実現します。
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <!-- Vertical line -->
+                    <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gray-700"></div>
+
+                    <!-- PDCA Items -->
+                    <div class="space-y-16">
+
+                        <!-- 1. PLAN -->
+                        <div class="relative md:grid md:grid-cols-2 md:gap-x-12 items-center">
+                            <div class="md:text-right md:pr-12">
+                                <p class="text-sm font-bold text-cyan-400">STEP 01</p>
+                                <h3 class="mt-1 text-3xl font-bold text-white">PLAN</h3>
+                                <p class="text-xl font-semibold text-gray-300">深層ニーズの可視化と最適化戦略の立案</p>
+                            </div>
+                            <div class="md:pl-12">
+                                <div class="relative mt-4 md:mt-0">
+                                    <div class="absolute -inset-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 opacity-25 blur"></div>
+                                    <div class="relative glass-effect rounded-lg p-6">
+                                        <h4 class="font-semibold text-white">Web & リアル行動データの統合分析</h4>
+                                        <p class="mt-2 text-gray-400 text-sm">
+                                            オンライン上の行動ログ、広告接触データから、オフラインの購買履歴やIoTデータまでを統合。AI/機械学習モデルを用いて多次元的に解析し、顧客の潜在ニーズ、インサイト、行動パターンを定量的に可視化。これにより、経験則を超えた精緻な初期仮説を構築します。
+                                        </p>
+                                        <p class="mt-3 text-xs font-mono text-cyan-300">強み: 高度な分析力とWeb表現の知見を統合した質の高い仮説構築</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 h-8 w-8 rounded-full bg-gray-800 border-2 border-cyan-400 flex items-center justify-center">
+                               <span class="text-cyan-400 font-bold">1</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. DO -->
+                        <div class="relative md:grid md:grid-cols-2 md:gap-x-12 items-center">
+                             <div class="md:col-start-2 md:pl-12">
+                                <p class="text-sm font-bold text-cyan-400">STEP 02</p>
+                                <h3 class="mt-1 text-3xl font-bold text-white">DO</h3>
+                                <p class="text-xl font-semibold text-gray-300">個別ニーズに応える体験の設計と実装</p>
+                            </div>
+                            <div class="md:col-start-1 md:row-start-1 md:text-right md:pr-12">
+                                <div class="relative mt-4 md:mt-0">
+                                    <div class="absolute -inset-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 opacity-25 blur"></div>
+                                    <div class="relative glass-effect rounded-lg p-6">
+                                        <h4 class="font-semibold text-white">パーソナライズUX設計・開発</h4>
+                                        <p class="mt-2 text-gray-400 text-sm">
+                                            PLANで得たインサイトに基づき、一人ひとりの属性、行動、文脈に合わせた最適なUX/UIを設計。パーソナライズされたコンテンツ配信、レコメンデーション、メッセージングなどを、A/Bテストや多変量テストを前提としたアジャイル開発プロセスで迅速に実装します。
+                                        </p>
+                                        <p class="mt-3 text-xs font-mono text-cyan-300">強み: データとUXデザインの融合による、ユーザー中心の体験設計</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="hidden md:block absolute left-1/2 -translate-x-1/2 h-8 w-8 rounded-full bg-gray-800 border-2 border-cyan-400 flex items-center justify-center">
+                               <span class="text-cyan-400 font-bold">2</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. CHECK -->
+                        <div class="relative md:grid md:grid-cols-2 md:gap-x-12 items-center">
+                            <div class="md:text-right md:pr-12">
+                                <p class="text-sm font-bold text-cyan-400">STEP 03</p>
+                                <h3 class="mt-1 text-3xl font-bold text-white">CHECK</h3>
+                                <p class="text-xl font-semibold text-gray-300">効果の定量的検証と深層原因の特定</p>
+                            </div>
+                            <div class="md:pl-12">
+                                <div class="relative mt-4 md:mt-0">
+                                    <div class="absolute -inset-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 opacity-25 blur"></div>
+                                    <div class="relative glass-effect rounded-lg p-6">
+                                        <h4 class="font-semibold text-white">効果検証と深層分析</h4>
+                                        <p class="mt-2 text-gray-400 text-sm">
+                                            実装した施策の効果を主要KPIに基づき厳密に測定・評価。統計的手法を用いて、結果の偶然性を排除し、「なぜ」その成果が生まれたのか、あるいは生まれなかったのかをデータから解明。単なる結果報告に留まらず、次なる改善に繋がる具体的なインサイトを抽出します。
+                                        </p>
+                                        <p class="mt-3 text-xs font-mono text-cyan-300">強み: 統計的有意性に基づいた厳密な効果測定と原因究明</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="hidden md:block absolute left-1/2 -translate-x-1/2 h-8 w-8 rounded-full bg-gray-800 border-2 border-cyan-400 flex items-center justify-center">
+                               <span class="text-cyan-400 font-bold">3</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. ACT -->
+                        <div class="relative md:grid md:grid-cols-2 md:gap-x-12 items-center">
+                             <div class="md:col-start-2 md:pl-12">
+                                <p class="text-sm font-bold text-cyan-400">STEP 04</p>
+                                <h3 class="mt-1 text-3xl font-bold text-white">ACT</h3>
+                                <p class="text-xl font-semibold text-gray-300">継続的改善と価値の最大化</p>
+                            </div>
+                            <div class="md:col-start-1 md:row-start-1 md:text-right md:pr-12">
+                                <div class="relative mt-4 md:mt-0">
+                                    <div class="absolute -inset-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 opacity-25 blur"></div>
+                                    <div class="relative glass-effect rounded-lg p-6">
+                                        <h4 class="font-semibold text-white">継続的改善と価値最大化</h4>
+                                        <p class="mt-2 text-gray-400 text-sm">
+                                            CHECKで得られた洞察に基づき、アルゴリズムの調整、コンテンツの再構築、新たなパーソナライズ戦略の立案など、継続的な最適化を実行します。このサイクルを高速で回し続けることで、個別最適化の精度を飛躍的に向上させ、顧客体験価値とビジネス価値を永続的に最大化します。
+                                        </p>
+                                        <p class="mt-3 text-xs font-mono text-cyan-300">強み: 伴走型支援による持続的な価値創出と変化への迅速な対応</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="hidden md:block absolute left-1/2 -translate-x-1/2 h-8 w-8 rounded-full bg-gray-800 border-2 border-cyan-400 flex items-center justify-center">
+                               <span class="text-cyan-400 font-bold">4</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="py-20 sm:py-28 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-base font-semibold text-cyan-400 tracking-wider uppercase">導入事例</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                        データサイエンスが拓く、ビジネスインパクト
+                    </p>
+                    <p class="mt-6 text-lg text-gray-400">
+                        私たちのソリューションが、様々な業界のビジネス課題をいかに解決し、具体的な成果と生活者の体験向上に繋がったか。その軌跡の一部をご紹介します。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Case Study 1: E-Commerce -->
+                    <div class="glass-effect rounded-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-cyan-500/20">
+                        <div class="p-8 flex-grow">
+                            <p class="text-sm font-semibold text-cyan-400">大手ECサイト</p>
+                            <h3 class="mt-2 text-xl font-bold text-white">画一的なレコメンドによる機会損失</h3>
+                            <p class="mt-4 text-gray-400 text-sm">Web行動データと購買データを統合分析。顧客をマイクロセグメント化し、個々の閲覧履歴や興味関心に合わせたリアルタイム・パーソナライズレコメンドを実装。</p>
+                            <div class="mt-6 border-t border-gray-700 pt-6">
+                                <p class="text-sm text-gray-300 font-semibold">主な成果:</p>
+                                <ul class="mt-3 space-y-2 text-sm text-gray-400">
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>CVR <strong class="text-white text-base">15%</strong> 向上</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>顧客単価 <strong class="text-white text-base">8%</strong> アップ</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>カゴ落ち率 <strong class="text-white text-base">22%</strong> 削減</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-gray-800/50">
+                            <p class="text-xs text-gray-500">生活者への影響: 「自分にぴったりの商品と出会える」という購買体験の質の向上。</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2: Finance -->
+                    <div class="glass-effect rounded-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-cyan-500/20">
+                        <div class="p-8 flex-grow">
+                            <p class="text-sm font-semibold text-cyan-400">金融機関</p>
+                            <h3 class="mt-2 text-xl font-bold text-white">若年層顧客のエンゲージメント低下</h3>
+                            <p class="mt-4 text-gray-400 text-sm">アプリ利用ログと取引データを解析。顧客のライフステージや金融リテラシーに応じたパーソナライズド・コンテンツ（コラム、投資情報）をプッシュ通知で配信。</p>
+                            <div class="mt-6 border-t border-gray-700 pt-6">
+                                <p class="text-sm text-gray-300 font-semibold">主な成果:</p>
+                                <ul class="mt-3 space-y-2 text-sm text-gray-400">
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>アプリ利用率 <strong class="text-white text-base">30%</strong> 向上</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>NPSスコア <strong class="text-white text-base">10</strong>ポイント 改善</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>新規口座開設者の若年層比率 <strong class="text-white text-base">18%</strong> 増加</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="p-6 bg-gray-800/50">
+                            <p class="text-xs text-gray-500">生活者への影響: 複雑な金融商品を「自分ごと」として捉え、資産形成への第一歩を踏み出すきっかけを創出。</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3: B2B SaaS -->
+                    <div class="glass-effect rounded-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300 shadow-lg hover:shadow-cyan-500/20">
+                        <div class="p-8 flex-grow">
+                            <p class="text-sm font-semibold text-cyan-400">B2B SaaS企業</p>
+                            <h3 class="mt-2 text-xl font-bold text-white">リードの質が低く、営業効率が低い</h3>
+                            <p class="mt-4 text-gray-400 text-sm">Webサイト行動、資料ダウンロード、ウェビナー参加履歴等のデータを統合。機械学習によるリードスコアリングモデルを構築し、有望なリードを自動で可視化。</p>
+                            <div class="mt-6 border-t border-gray-700 pt-6">
+                                <p class="text-sm text-gray-300 font-semibold">主な成果:</p>
+                                <ul class="mt-3 space-y-2 text-sm text-gray-400">
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>MQL→SQL転換率 <strong class="text-white text-base">25%</strong> 向上</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>顧客獲得コスト(CAC) <strong class="text-white text-base">18%</strong> 削減</span></li>
+                                    <li class="flex items-start"><span class="text-cyan-400 mr-2 mt-1">&#10003;</span> <span>営業チームの生産性 <strong class="text-white text-base">1.4倍</strong> に</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="p-6 bg-gray-800/50">
+                            <p class="text-xs text-gray-500">生活者(担当者)への影響: 不要な営業アプローチが減り、真に必要な情報を適切なタイミングで得られる体験。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gray-800">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    貴社の課題を、データで解決しませんか？
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-gray-400">
+                    私たちのデータサイエンスに基づくアプローチが、貴社のビジネスをどのように変革できるか、ぜひ一度お聞かせください。
+                </p>
+                <a href="contact.html" class="mt-8 inline-block bg-cyan-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-white hover:bg-cyan-600 transition-colors duration-300">
+                    無料相談を申し込む
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Company Info -->
+                <div class="md:col-span-1">
+                    <a href="index.html" class="text-2xl font-bold tracking-wider">
+                        DataOptimize <span class="gradient-text">Inc.</span>
+                    </a>
+                    <p class="mt-4 text-sm text-gray-400">
+                        データとデジタル空間の知見を通じて、生活者一人ひとりの生活を根源から最適化し、その可能性を最大化します。
+                    </p>
+                </div>
+
+                <!-- Column 2: Site Map -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">サイトマップ</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="index.html" class="text-base text-gray-400 hover:text-white">ホーム</a></li>
+                        <li><a href="vision.html" class="text-base text-gray-400 hover:text-white">VISION</a></li>
+                        <li><a href="solutions.html" class="text-base text-gray-400 hover:text-white">SOLUTIONS</a></li>
+                        <li><a href="insights.html" class="text-base text-gray-400 hover:text-white">INSIGHTS</a></li>
+                        <li><a href="collaboration.html" class="text-base text-gray-400 hover:text-white">COLLABORATION</a></li>
+                        <li><a href="contact.html" class="text-base text-gray-400 hover:text-white">CONTACT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Legal & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">リソース</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">プライバシーポリシー</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">利用規約</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">採用情報</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social Media -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">フォローする</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">X (Twitter)</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                         <a href="#" class="text-gray-400 hover:text-white">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 border-t border-gray-800 pt-8">
+                <p class="text-base text-gray-500 text-center">&copy; 2024 DataOptimize Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
