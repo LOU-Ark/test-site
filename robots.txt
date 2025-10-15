@@ -1,0 +1,14 @@
+# robots.txt for PEOPLE-OPT (Digital Insight Partners)
+# Data-Driven Society 5.0 Vision Site
+
+# すべてのクローラーに対して、クロールを許可
+User-agent: *
+Allow: /
+
+# クロールの除外設定 (通常、ユーティリティページは除外しないが、ここでは念のため管理用フォルダを設定)
+# Disallow: /data/  # GitHubリポジトリ構造に合わせ、データフォルダを隠す（セキュリティ上）
+# Disallow: /temp/ # 一時的なフォルダがあれば除外
+
+# サイトマップの場所を明示
+# ⚠️ URLは必ずGitHub PagesのルートURLに合わせてください。
+Sitemap: https://lou-ark.github.io/test-site/sitemap.xml
